@@ -27,10 +27,10 @@ This API allows users to:
 - Create a question
 - Fetch a question with all its options
 - Delete a question (only if no option has votes)
+- Add option to a question
 
 ### 🟡 Options
 
-- Add option to a question
 - Delete option (only if it has no votes)
 - Vote on an option (atomic operation using `$inc`)
 
@@ -79,13 +79,14 @@ This API allows users to:
 ````bash
 git clone https://github.com/Juneja16/polling-system-api
 cd polling-api
-
+````
 
 # 2️⃣ Install Dependencies
 
 ```bash
 npm install
 ````
+
 
 # 3️⃣ Create .env File
 
