@@ -1,5 +1,6 @@
 import Option from "../models/option.model.js";
 import Question from "../models/question.model.js";
+import mongoose from "mongoose";
 /*
 CREATE QUESTION
 POST /questions/create
@@ -147,8 +148,6 @@ export const deleteQuestion = async (req, res) => {
 ADD OPTION TO QUESTION
 POST /questions/:id/options/create
 */
-
-import mongoose from "mongoose";
 
 export const createOption = async function (req, res) {
   try {
