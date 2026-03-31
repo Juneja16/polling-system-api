@@ -9,13 +9,13 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 8000;
 
-/* Middleware: Body Parser */
+/* Middleware: Body Parser Client text to JS OBj */
 app.use(express.json());
 
 /* Routes*/
 app.use("/api", routes);
 
-/*  The 404 Handler */
+/*  The 404 Handler for those wrong Urls/ mistypos  */
 app.use((req, res) => {
   res.status(404).json({
     success: false,
@@ -23,7 +23,8 @@ app.use((req, res) => {
   });
 });
 
-/*  Global Error Handler */
+/*  Global Error Handler 
+For Errors that are being caught using normal try-catch i.e Middleware bases DB Connection Failed in between */
 app.use((err, req, res, next) => {
   const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
   res.status(statusCode).json({
